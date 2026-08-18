@@ -280,22 +280,94 @@ body {
 }
 
 .brand-logo {
-  font-family: var(--font-mono);
-  font-size: 1.35rem;
-  font-weight: 700;
   text-decoration: none;
-  color: #ffffff;
   display: inline-flex;
   align-items: center;
-  letter-spacing: -0.03em;
+  gap: 0.75rem;
+  transition: transform var(--transition-fast);
 }
 
-.logo-bracket {
+.brand-logo:hover {
+  transform: translateY(-2px);
+}
+
+.brand-emblem {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.3), rgba(99, 102, 241, 0.3));
+  border: 1.5px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.brand-logo:hover .brand-emblem {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+}
+
+.emblem-initials {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #ffffff 40%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.emblem-dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 8px #38bdf8;
+}
+
+.brand-titles {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-name {
+  font-family: var(--font-sans);
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.brand-name .brand-gradient {
+  background: linear-gradient(135deg, var(--primary-light), #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.15rem;
+}
+
+.brand-tagline i {
   color: var(--primary-light);
-}
-
-.logo-accent {
-  color: var(--accent-light);
+  font-size: 0.72rem;
 }
 
 .nav-list {
@@ -1983,10 +2055,17 @@ body {
   gap: 2rem;
 }
 
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .footer-brand p {
   color: var(--text-muted);
   font-size: 0.92rem;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   max-width: 450px;
 }
 
